@@ -16,6 +16,7 @@ import DependenciesPage from './pages/DependenciesPage';
 import DocumentsPage from './pages/DocumentsPage';
 import ReportsPage from './pages/ReportsPage';
 import NotificationsPage from './pages/NotificationsPage';
+import EscalationPoliciesPage from './pages/EscalationPoliciesPage';
 
 const baseName = '/';
 
@@ -129,6 +130,12 @@ const routes = () => [
     title: 'Notifications',
     to: '/notifications',
     component: NotificationsPage
+  },
+  {
+    iconClass: 'fa fa-bell',
+    title: '(App) Escalation Policies',
+    to: '/escalationpolicies',
+    component: EscalationPoliciesPage
   },
 ];
 

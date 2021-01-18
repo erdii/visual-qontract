@@ -9,6 +9,10 @@ import Service from './elements/Service';
 const GET_SERVICE = gql`
   query App($path: String) {
     apps_v1(path: $path) {
+      escalationPolicy {
+        name
+        path
+      }
       path
       name
       description

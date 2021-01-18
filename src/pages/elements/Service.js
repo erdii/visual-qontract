@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Label, Table } from 'patternfly-react';
 import Definition from '../../components/Definition';
 import CodeComponents from '../../components/ServiceCodeComponents';
@@ -179,6 +180,20 @@ function Service({ service, reports, documents }) {
       <h4>Info</h4>
       <Definition items={[['Onboarding Status', service.onboardingStatus]]} />
       <Definition items={[['SLO', service.performanceParameters.SLO]]} />
+      <Definition items={[['Escalation policy',
+        service.escalationPolicy == null ? (
+          <span className="escalationpolicy-not-defined">not defined</span>
+        ) : (
+          <Link
+              to={{
+                  pathname: '/escalationpolicies',
+                  hash: service.escalationPolicy.path
+              }}
+          >
+              {service.escalationPolicy.name}
+          </Link>
+        )
+      ]]} />
 
       <h4>Service Owners</h4>
       <Definition items={serviceOwners} />
